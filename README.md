@@ -1,4 +1,4 @@
-# [Orign](http://myorign.com) Front-End Take-Home Assignment
+# [Origin](http://useorigin.com) Front-End Take-Home Assignment
 
 This application used to allow users to type a car's [VIN number](https://www.autocheck.com/vehiclehistory/autocheck/en/vinbasics) and see it's `year of production`, `make`, `model` and `trim`.
 
