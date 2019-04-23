@@ -3,7 +3,7 @@ import {
     isFunction,
     isArray,
     isValid,
-    toDictonary,
+    toDictionary,
     toByte,
     toMinMax,
     areEqual,
@@ -97,35 +97,35 @@ describe("utils", () => {
         })
     })
 
-    describe("toDictonary()", () => {
-        it("gets empty dictonary if no array is given", () => expect(toDictonary(null, null)).toEqual({}))
-        it("gets empty dictonary if no getKey param is given", () => expect(toDictonary(["foo"], null)).toEqual({}))
+    describe("toDictionary()", () => {
+        it("gets empty dictonary if no array is given", () => expect(toDictionary(null, null)).toEqual({}))
+        it("gets empty dictonary if no getKey param is given", () => expect(toDictionary(["foo"], null)).toEqual({}))
         it("gets empty dictonary if no getValue param is given", () =>
-            expect(toDictonary(["foo"], k => k, null)).toEqual({}))
+            expect(toDictionary(["foo"], k => k, null)).toEqual({}))
         it("gets maped array of strings", () =>
-            expect(toDictonary(["foo", "bar"], s => s)).toEqual({ foo: "foo", bar: "bar" }))
+            expect(toDictionary(["foo", "bar"], s => s)).toEqual({ foo: "foo", bar: "bar" }))
         it("gets maped array of strings using passed getValue", () =>
-            expect(toDictonary(["foo", "bar"], s => s, s => s + "2")).toEqual({ foo: "foo2", bar: "bar2" }))
+            expect(toDictionary(["foo", "bar"], s => s, s => s + "2")).toEqual({ foo: "foo2", bar: "bar2" }))
         it("gets maped array of strings with duplicated value", () =>
-            expect(toDictonary(["foo", "bar", "foo"], s => s)).toEqual({ foo: "foo", bar: "bar" }))
+            expect(toDictionary(["foo", "bar", "foo"], s => s)).toEqual({ foo: "foo", bar: "bar" }))
         it("gets maped array of objects with duplicated value", () =>
-            expect(toDictonary([{ id: "foo" }, { id: "bar" }], s => s.id)).toEqual({
+            expect(toDictionary([{ id: "foo" }, { id: "bar" }], s => s.id)).toEqual({
                 foo: { id: "foo" },
                 bar: { id: "bar" }
             }))
         it("gets maped array of objects with duplicated value", () =>
-            expect(toDictonary([{ id: "foo" }, { id: "bar" }, { id: "foo", value: 2 }], s => s.id)).toEqual({
+            expect(toDictionary([{ id: "foo" }, { id: "bar" }, { id: "foo", value: 2 }], s => s.id)).toEqual({
                 foo: { id: "foo", value: 2 },
                 bar: { id: "bar" }
             }))
         it("gets maped array of objects with duplicated value", () =>
-            expect(toDictonary([{ id: "foo" }, { id: "bar" }, { id: "foo", value: 2 }], s => s.id)).toEqual({
+            expect(toDictionary([{ id: "foo" }, { id: "bar" }, { id: "foo", value: 2 }], s => s.id)).toEqual({
                 foo: { id: "foo", value: 2 },
                 bar: { id: "bar" }
             }))
         it("gets maped array of objects with duplicated value using passed getValue param", () =>
             expect(
-                toDictonary([{ id: "foo" }, { id: "bar" }, { id: "foo", value: 2 }], s => s.id, s => s.value)
+                toDictionary([{ id: "foo" }, { id: "bar" }, { id: "foo", value: 2 }], s => s.id, s => s.value)
             ).toEqual({
                 foo: 2,
                 bar: undefined

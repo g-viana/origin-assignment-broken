@@ -29,7 +29,7 @@ export const toArray = <T, T2>(map: SMap<T>, toValue: (t: T, key: keyof T, index
     return result
 }
 
-export function toDictonary<T, K = T>(
+export function toDictionary<T, K = T>(
     vs: T[],
     getKey: (v: T) => string,
     getValue: (v: T, index?: number) => K = v => (v as any) as K
