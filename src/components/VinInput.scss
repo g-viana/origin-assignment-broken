@@ -1,12 +1,30 @@
 $color: #ff9393;
 .VinInput {
     display: flex;
+    flex-direction: column;
     input {
+        background: #eee;
+        border: 1px solid transparent;
         border-radius: 5px;
         caret-color: #1056ad;
+        line-height: 1.8em;
+        font-size: 1.5em;
+        flex-grow: 1;
+        padding: 0 .2em;
     }
     &__Error {
+        height: 1.7em;
+        line-height: 100%;
+        align-self: center;
         color: $color;
+        padding-top: .5em;
+        font-size: .6em;
+    }
+}
+
+.VinInput--invalid {
+    input {
+        border: 1px solid $color;
     }
 }
 
@@ -16,4 +34,12 @@ $color: #ff9393;
 
 *:focus {
     outline: none;
+}
+
+@media (max-width: 600px) {
+    .VinInput {
+        input {
+            font-size: 1em;
+        }
+    }
 }

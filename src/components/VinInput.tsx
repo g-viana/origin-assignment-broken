@@ -3,6 +3,7 @@ import { bindBem } from "../utils/bem"
 import "./VinInput.scss"
 
 const { block, element } = bindBem("VinInput")
+const VIN_MAXLENGTH = 17
 
 interface Props {
     value: string
@@ -11,9 +12,9 @@ interface Props {
     className?: string
 }
 
-export const VinInput: React.SFC<Props> = ({ className, error, onChange }) => (
+export const VinInput: React.SFC<Props> = ({ value, className, error, onChange }) => (
     <div className={block({ invalid: !!error }, className)}>
-        <input value={"value"} onChange={e => onChange(e.target.value)} />
+        <input maxLength={VIN_MAXLENGTH} onChange={e => onChange(e.target.value)} name="vin" value={value} />
         <div className={element("Error")}>{error}</div>
     </div>
 )
