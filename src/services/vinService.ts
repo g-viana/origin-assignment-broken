@@ -36,7 +36,7 @@ export const convert = (_res: VinCheckResponse): CarInfo => {
         trim: entry.Trim,
         model: entry.Model,
         vehicleType: entry.VehicleType,
-        year: entry.ModelYear ? parseInt(entry.ModelYear) : undefined
+        year: entry.ModelYear ? parseInt(entry.ModelYear, 10) : undefined
     }
 }
 
