@@ -5,7 +5,10 @@ export const mapRepeat: <T>(length: number, cb: (index: number) => T) => T[] = (
 export const repeat = (length: number, cb: (index: number) => void) => NArray(length).forEach(cb) as void
 export const isFunction = (f: any): f is Function => "function" === typeof f
 export const isArray = <T>(ts: T[] | any): ts is T[] => ts && typeof ts === "object" && ts.constructor.name === "Array"
-export const isValid = (pred: boolean | (() => boolean)) => (isFunction(pred) ? pred() : pred)
+export const isValid = (pred: any | (() => boolean)) => (isFunction(pred) ? pred() : !!pred)
+export const isInvalid = (pred: any | (() => boolean)) => !isValid(pred)
+export const isValidArray = (_array: any[], minLength: number = 1) => isValid(!!_array) && _array.length >= minLength
+export const isInvalidArray = (_array: any[], minLength: number = 1) => !isValidArray(_array, minLength)
 export const toByte = (value: number, min: number, max: number) => toMinMax(value, min, max)
 export const toMinMax = (value: number, min: number, max: number) => (value < min ? min : value > max ? max : value)
 

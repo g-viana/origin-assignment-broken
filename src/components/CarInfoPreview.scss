@@ -1,6 +1,23 @@
+@import './variables.scss';
+
 .CarInfoPreview {
-    &__Line {}
+
+    margin-top: 20px;
+
+    &__Line {
+        border-top: 1px solid $gray;
+        padding: 10px 0;
+        font-size: 0.8em;
+    }
     &__Line:first-child {
         border-top: none;
+    }
+
+    &__Error {
+        color: $errorColor;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 0.5em;
     }
 }

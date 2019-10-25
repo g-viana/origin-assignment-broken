@@ -4,7 +4,7 @@
 
 declare module "*.scss"
 
-type Async<T> = "NotLoaded" | "Loading" | T
+type Async<T> = "NotLoaded" | "Loading" | "Error" | T
 type TMap<TKey extends string, TValue> = { [K in TKey]: TValue }
 type SMap<TValue> = TMap<string, TValue>
 type Casted<T, S> = { [P in keyof T]: S }

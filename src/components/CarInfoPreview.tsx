@@ -21,6 +21,8 @@ interface Props {
 export const CarInfoPreview: React.SFC<Props> = ({ carInfo }) => {
     if (carInfo === "Loading") return <Spinner />
     if (carInfo === "NotLoaded" || !carInfo) return null
+    if (carInfo === "Error") return <div className={element("Error")}>Error loading car information</div>
+
     const { year, make, trim, model } = carInfo
     if (!make) return <div className={block()}>not registered with NHTSA</div>
     return (

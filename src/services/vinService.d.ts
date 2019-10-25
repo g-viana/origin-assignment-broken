@@ -7,10 +7,11 @@ interface CarInfo {
 }
 
 interface VinResultEntry {
-    Value: string
-    ValueId: string
-    Variable: string
-    VariableId: number
+    Make: string
+    Model: string
+    ModelYear: string
+    Trim: string
+    VehicleType: string
 }
 
 interface VinCheckResponse {

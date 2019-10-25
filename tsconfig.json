@@ -28,7 +28,7 @@
                 "src/@types/*",
                 "*"
             ]
-        },
+        }
     },
     "allowJS": false,
     "include": [

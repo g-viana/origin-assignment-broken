@@ -1,13 +1,38 @@
-$color: #ff9393;
+@import './variables.scss';
+
 .VinInput {
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 30px;
+
     input {
         border-radius: 5px;
         caret-color: #1056ad;
+        width: 100%;
+        height: 50px;
+        border: 1px solid transparent;
+        background-color: $gray;
+        padding: 10px;
+        line-height: 50px;
+        font-size: 1.4em;
+        transition: border-color 300ms ease-in-out;
     }
     &__Error {
-        color: $color;
+        color: $errorColor;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 0.5em;
     }
+
+    &.VinInput--invalid {
+        margin-bottom: 12px;
+        input {
+            border-color: $errorColor;
+        }
+    }
+
 }
 
 ::-webkit-input-placeholder {
@@ -17,3 +42,4 @@ $color: #ff9393;
 *:focus {
     outline: none;
 }
+
